@@ -24,10 +24,10 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --noconfirm --onedir --windowed --add-data "assets;assets" main.py
+        pyinstaller --onefile --noconsole --name=FitnessClubApp main.py
 
     - name: Upload Artifact (ZIP with EXE)
       uses: actions/upload-artifact@v4
       with:
         name: fitness-club-app-windows
-        path: dist/main/
+        path: dist/
